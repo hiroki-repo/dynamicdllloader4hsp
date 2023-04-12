@@ -142,5 +142,7 @@ if boolofthedllmain=0{return 0}
 return -1
 
 #global
+#define global guselib(%1) __HMHMHMHM_@__gocainellibrary__=LoadLibraryOH(%1)
+#define global gfunc(%1) dupptr __ppgfunc__@__gocainellibrary__,libptr(%1)+24,4,4:__Funcname__@__gocainellibrary__="%1":repeat:if strmid(__Funcname__@__gocainellibrary__,0,1)=" "{__Funcname__@__gocainellibrary__=strmid(__Funcname__@__gocainellibrary__,1,strlen(__Funcname__@__gocainellibrary__))}else{break}:loop:lpoke __ppgfunc__@__gocainellibrary__,0,GetProcAddressOH(__HMHMHMHM_@__gocainellibrary__,__Funcname__@__gocainellibrary__)
 initllmodule4gc@__gocainellibrary__
 #endif
