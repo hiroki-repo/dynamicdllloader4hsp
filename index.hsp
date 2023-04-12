@@ -1,0 +1,12 @@
+#include "loadlibrary.as"
+HM=LoadLibraryOH("em180dll.dll")
+Pem180=GetProcAddressOH(HM,"_em180")
+Pgetmainmemptr=GetProcAddressOH(HM,"getmainmemptr")
+Pgetguardptr=GetProcAddressOH(HM,"getguardptr")
+mes strf("%08X",Pgetmainmemptr-HM)
+mes strf("%08X",Pgetmainmemptr)
+dupptr funcdata4debug,Pgetguardptr,0x10,2
+//dialog Pgetmainmemptr
+dupptr memory,callfunc(a,Pgetmainmemptr,0),65536,2
+poke memory,0,0x76
+mes callfunc(a,Pem180,0)
